@@ -7,14 +7,14 @@ This repository contains the source code for the [Azure Container Apps](https://
 - [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
 - [Docker](https://docs.docker.com/get-docker/)
 - [Visual Studio Code](https://code.visualstudio.com/)
-- [Azure Account Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)
 
-## Create a container app
+
+## How to use this repository
 
 ### 1. Clone the repository
 
 ```bash
-git clone
+git clone https://github.com/BMeyn/vscode_server_app.git
 ```
 
 ### 2. Edit .env file and set the following variables
