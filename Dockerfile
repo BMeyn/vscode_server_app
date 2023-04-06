@@ -1,4 +1,6 @@
-FROM codercom/code-server:latest
+FROM --platform=linux/amd64 codercom/code-server:latest
+
+COPY .config/code-server/config.yaml /home/coder/.config/code-server/config.yaml
 
 # install extensions
 RUN code-server --install-extension ms-python.python; \
