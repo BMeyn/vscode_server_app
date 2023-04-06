@@ -9,20 +9,13 @@ build:
 	docker build -t $(DOCKER_IMAGE_TAG)/$(DOCKER_IMAGE_NAME) .
 
 test:
-	docker rm code-server
 	@echo "Testing Docker Image"
-	@echo "Open $(HOME)"
-	@echo "Open $(PWD)"
-	docker run -it --name code-server -p 127.0.0.1:8080:8080 \
-		-v "$(PWD)/.config:/home/coder/.config" \
-		-v "$(PWD):/home/coder/project" \
-		-e "DOCKER_USER=$(USER)" \
-		bmeyn/codeserver:latest
+	docker-compose down
+	docker-compose up
 
 push:
 	@echo "Pushing Docker Image to Docker Hub"
 	docker push $(DOCKER_IMAGE_TAG)/$(DOCKER_IMAGE_NAME):latest
-
 
 deploy:
 	@echo "Deploying to Azure"
